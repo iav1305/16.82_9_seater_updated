@@ -1,0 +1,172 @@
+82 9 seater - Base
+#Mach
+0
+#IYsym   IZsym   Zsym
+0       0   0.0
+#Sref    Cref    Bref
+29.3     1.7     17.1
+#Xref    Yref    Zref
+0.425 0 0
+# CDp
+0.055
+#===============================================================================
+SURFACE
+Main Wing
+#Nchord  Cspace  [ Nspan Sspace  Nujet Cusp  Nwjet Cwsp ]
+18       1.0       25     -2.0   0.2   0.0   30    -2.0
+
+YDUPLICATE
+0
+
+JETPARAM
+#hdisk   fh    djet0   djet1   djet3       dxdisk  dndisk
+0.188    0    0   0   0    0.10   -0.188
+#--------------------------------------------------
+SECTION Root
+#Xle    Yle    Zle     Chord   Ainc  [Nspanwise   Sspace]
+0 0 0 2.11 0 10 -2.0
+
+AFIL
+bw02.dat
+
+CONTROL
+#name, gain, Xhinge, XYZhvec, SgnDup
+Flap1 1 0.66 0 0 0 1
+
+JETCONTROL
+#Djet  1.0   1.0  ! name, gain, SgnDup
+JetIn 1.000 1.000
+
+JETCONTROL
+#Djet  1.0   1.0  ! name, gain, SgnDup
+JetInDiff 1.000 -1.0
+
+#--------------------------------------------------
+SECTION AileronFlap
+#Xle    Yle    Zle     Chord   Ainc  [Nspanwise   Sspace]
+0.2 4.275 0 1.71 0 10 1.0
+
+AFIL
+bw02.dat
+
+CONTROL
+#name, gain, Xhinge, XYZhvec, SgnDup
+Flap1 1 0.66 0 0 0 1
+
+CONTROL
+#name, gain, Xhinge, XYZhvec, SgnDup
+Aileron 1 0.66 0 0 0 -1
+
+JETCONTROL
+#Djet  1.0   1.0  ! name, gain, SgnDup
+JetIn 1.000 1.000
+
+JETCONTROL
+#Djet  1.0   1.0  ! name, gain, SgnDup
+JetInDiff 1.000 -1.0
+
+JETCONTROL
+#Djet  1.0   1.0  ! name, gain, SgnDup
+JetOut 1.000 1.000
+
+JETCONTROL
+#Djet  1.0   1.0  ! name, gain, SgnDup
+JetOutDiff 1.000 -1.0
+#--------------------------------------------------
+SECTION Tip
+#Xle    Yle    Zle     Chord   Ainc  [Nspanwise   Sspace]
+0.4 8.55 0 1.31 0 10 1.0
+
+AFIL
+bw02.dat
+
+CONTROL
+#name, gain, Xhinge, XYZhvec, SgnDup
+Aileron 1 0.66 0 0 0 -1
+
+JETCONTROL
+#Djet  1.0   1.0  ! name, gain, SgnDup
+JetOut 1.000 1.000
+
+JETCONTROL
+#Djet  1.0   1.0  ! name, gain, SgnDup
+JetOutDiff 1.000 -1.0
+#===============================================================================
+SURFACE
+Vertical Tail
+#Nchord  Cspace  [ Nspan Sspace  Nujet Cusp  Nwjet Cwsp ]
+8        1.0       8     1.0
+
+#--------------------------------------------------
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  [Nspanwise   Sspace]
+5.868 0 0 2.12 0 10 1
+
+NACA
+0012
+
+CONTROL
+#name, gain, Xhinge, XYZhvec, SgnDup
+Rudder 1 0.66 0 0 0 1
+
+#--------------------------------------------------
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  [Nspanwise   Sspace]
+6.998 0 2.26 1.69 0 10 1
+
+NACA
+0012
+
+CONTROL
+#name, gain, Xhinge, XYZhvec, SgnDup
+Rudder 1 0.66 0 0 0 1
+
+#===============================================================================
+SURFACE
+Horizontal Tail
+#Nchord  Cspace  [ Nspan Sspace  Nujet Cusp  Nwjet Cwsp ]
+10       1.0       12    1.0
+
+YDUPLICATE
+0
+
+#--------------------------------------------------
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  [Nspanwise   Sspace]
+6.998 0 2.26 1.69 0 10 1
+
+NACA
+0012
+
+CONTROL
+#name, gain, Xhinge, XYZhvec, SgnDup
+Elevator 1 0.65 0 0 0 1
+
+#--------------------------------------------------
+SECTION
+#Xle    Yle    Zle     Chord   Ainc  [Nspanwise   Sspace]
+7.488 3.385 2.26 1.2 0 10 1
+
+NACA
+0012
+
+CONTROL
+#name, gain, Xhinge, XYZhvec, SgnDup
+Elevator 1 0.65 0 0 0 1
+
+#===============================================================================
+BODY
+Fuselage
+#Nbody  Bspace
+15    1.0
+
+TRANSLATE
+#X y Z
+-3.472 0 -0.8022
+
+SCALE
+#Xscale   Yscale   Zscale
+11.46      11.46      11.46
+
+BFILE
+fuse2.dat
